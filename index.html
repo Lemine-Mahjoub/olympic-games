@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Babylon.js Scene</title>
 </head>
 <body>
-    <canvas id="gameCanvas"></canvas>
+    <canvas id="renderCanvas"></canvas>
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
-    <script src="app.js"></script>
+    <script src="dist/bundle.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #renderCanvas {
+            width: 100vw;
+            height: 100vh;
+            touch-action: none; /* Empêche les interactions tactiles par défaut */
+        }
+    </style>
 </body>
 </html>
