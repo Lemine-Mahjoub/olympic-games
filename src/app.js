@@ -37,21 +37,10 @@ camera.upperRadiusLimit = 10;
 
 camera.wheelPrecision = 50;
 
-var light = new BABYLON.DirectionalLight("dir01", new BABYLON.Vector3(-1, -2, -1), scene);
-light.intensity = 0.5;
-var pointLight = new BABYLON.PointLight("point01", new BABYLON.Vector3(0, 1, 0), scene);
-pointLight.intensity = 0.8;
 
-var spotLight = new BABYLON.SpotLight("spot01", new BABYLON.Vector3(0, 10, 0), new BABYLON.Vector3(0, -1, 0), Math.PI / 3, 2, scene);
-spotLight.intensity = 0.7;
-var hemiLight = new BABYLON.HemisphericLight("hemi01", new BABYLON.Vector3(0, 1, 0), scene);
-hemiLight.intensity = 0.6;
+const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+light.intensity = 0.7;
 
-
-var shadowGenerator = new BABYLON.ShadowGenerator(1024, light);
-var box = BABYLON.Mesh.CreateBox("box", 2.0, scene);
-shadowGenerator.getShadowMap().renderList.push(box);
-box.receiveShadows = true;
 
 var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2}, scene);
 
