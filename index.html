@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Babylon.js Scene</title>
+    <title>Olympic Games</title>
+    <link rel="icon" type="image/png" href="assets/img/Logo.png">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <canvas id="renderCanvas"></canvas>
+    <div id="mainMenu">
+        <img src="assets/img/Logo.png" alt="">
+        <div id="mainMenuButton">
+            <button id="startGame">Jouer</button>
+            <button id="options">Paramettre</button>
+        </div>
+        <div id="mainMenuContact">
+            <a href="https://www.cgi.com/france/fr-fr/event/games-on-web-2024"><i data-lucide="trophy"></i></a>
+            <a href="https://github.com/Lemine-Mahjoub/olympic-games"><i data-lucide="github"></i></a>
+            <a href="https://www.linkedin.com/in/leminemahjoub/"><i data-lucide="linkedin"></i></a>
+        </div>
+        <div id="factDiv">
+            <p id="fact"></p>
+        </div>
+    </div>
+
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="js/app.js"></script>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-    </style>
+    <script src="js/menu.js"></script>
 </body>
 </html>
+
