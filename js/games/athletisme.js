@@ -29,18 +29,6 @@ export const athletisme = () => {
         for (let step = 0; step < steps; step++) {
             setTimeout(() => {
                 switch (direction) {
-                    case "up":
-                        cube.position.z -= speed / steps;
-                        break;
-                    case "down":
-                        cube.position.z += speed / steps;
-                        break;
-                    case "left":
-                        cube.position.x += speed / steps;
-                        break;
-                    case "right":
-                        cube.position.x -= speed / steps;
-                        break;
                     case "jump":
                         if (step < steps / 2) {
                             cube.position.y += (speed / steps) * 2;
@@ -55,18 +43,6 @@ export const athletisme = () => {
     
     window.addEventListener("keydown", (e) => {
         switch (e.key) {
-            case "ArrowUp":
-                moveCube("up");
-                break;
-            case "ArrowDown":
-                moveCube("down");
-                break;
-            case "ArrowLeft":
-                moveCube("left");
-                break;
-            case "ArrowRight":
-                moveCube("right");
-                break;
             case " ":
                 moveCube("jump");
                 break;
@@ -75,6 +51,7 @@ export const athletisme = () => {
     
     engine.runRenderLoop(() => {
         scene.render();
+        cube.position.z -= 0.05;
     });
     
     window.addEventListener("resize", () => {
