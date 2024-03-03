@@ -1,34 +1,36 @@
 import {menu} from './menu.js';
+import { athletisme } from './games/athletisme.js';
 
 const choices = () => {
-    document.getElementById('game1').addEventListener('click', function() {athletisme();});
-    document.getElementById('game2').addEventListener('click', function() {hurdle();});
-    document.getElementById('game3').addEventListener('click', function() {poids();});
-    document.getElementById('game4').addEventListener('click', function() {natation();});
+    const hideGamesMenu = () => {
+        document.getElementById('gameSelection').style.display = 'none';
+        document.querySelector('body').style.background = '#fff';
+    }
+    document.getElementById('game1').addEventListener('click', function() {choseAthletisme(); hideGamesMenu();});
+    document.getElementById('game2').addEventListener('click', function() {choseHurdle(); hideGamesMenu();});
+    document.getElementById('game3').addEventListener('click', function() {chosePoids(); hideGamesMenu();});
+    document.getElementById('game4').addEventListener('click', function() {choseNatations(); hideGamesMenu();});
 }
 
-
-const athletisme = () => {
-    console.log('athletisme');
+const choseAthletisme = () => {
+    athletisme();
 }
 
-const hurdle = () => {
+const choseHurdle = () => {
     console.log('hurdle');
 }
 
-const poids = () => {
+const chosePoids = () => {
     console.log('poids');
 }
 
-const natation = () => {
+const choseNatations = () => {
     console.log('natations');
 }
-
 
 const main = () => {
     menu();
     choices();
 }
-
 
 main();
