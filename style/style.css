@@ -14,8 +14,8 @@ body::before {
   height: 100%;
   background: url("../assets/img/background_main_menu.png") no-repeat center center;
   background-size: cover;
-  -webkit-backdrop-filter: blur(200px);
-  backdrop-filter: blur(200px);
+  -webkit-backdrop-filter: blur(300px);
+  backdrop-filter: blur(300px);
   z-index: 2;
 }
 
@@ -45,7 +45,7 @@ canvas {
   height: 35%;
 }
 #mainMenu #mainMenuButton {
-  margin-top: 5%;
+  margin-top: 4%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,12 +53,12 @@ canvas {
   width: 100%;
 }
 #mainMenu #mainMenuButton button {
-  width: 30%;
-  height: 75px;
-  font-size: 1.5em;
+  width: 25%;
+  height: 70px;
+  font-size: 1.3em;
   margin: 20px 0;
   border: none;
-  background-color: rgba(255, 166, 0, 0.8352941176);
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.8431372549), rgba(255, 190, 93, 0.862745098));
   color: #fff;
   text-shadow: 2px 2px 4px #000;
   cursor: pointer;
@@ -66,11 +66,11 @@ canvas {
   border-radius: 32px;
   outline: none;
   font-weight: bold;
-  letter-spacing: 1px;
-  border: 1px solid rgba(255, 166, 0, 0.9176470588);
+  letter-spacing: 2px;
+  border: 1px solid #fca80c;
 }
 #mainMenu #mainMenuButton button:hover {
-  background-color: #ff8c00;
+  background: radial-gradient(circle, #ff8c00, #ffbe5d);
   transform: scale(1.05);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   outline: none;
@@ -89,8 +89,8 @@ canvas {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: #eee;
   margin: 0 10px;
   border-radius: 50%;
@@ -116,7 +116,7 @@ canvas {
   align-items: center;
 }
 #mainMenu #factDiv p {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #f1f1f1;
   font-weight: bold;
   text-shadow: 2px 2px 2px #000;
