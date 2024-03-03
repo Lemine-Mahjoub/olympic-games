@@ -1,32 +1,34 @@
-window.addEventListener('DOMContentLoaded', function() {
-    var canvas = document.getElementById('renderCanvas');
-    var engine = new BABYLON.Engine(canvas, true);
+import {menu} from './menu.js';
 
-    var createScene = function() {
-        var scene = new BABYLON.Scene(engine);
-        var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, BABYLON.Vector3.Zero(), scene);
-        camera.attachControl(canvas, true);
-
-        var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0), scene);
-
-        // Simple sphere to represent something in the scene
-        var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2}, scene);
-
-        return scene;
-    };
-
-    var scene = createScene();
-
-    engine.runRenderLoop(function() {
-        scene.render();
-    });
-
-    window.addEventListener('resize', function() {
-        engine.resize();
-    });
-
-    // Event listeners for menu buttons
+const choices = () => {
+    document.getElementById('game1').addEventListener('click', function() {athletisme();});
+    document.getElementById('game2').addEventListener('click', function() {hurdle();});
+    document.getElementById('game3').addEventListener('click', function() {poids();});
+    document.getElementById('game4').addEventListener('click', function() {natation();});
+}
 
 
-    // Implement similar listeners for 'options' and 'exit' buttons
-});
+const athletisme = () => {
+    console.log('athletisme');
+}
+
+const hurdle = () => {
+    console.log('hurdle');
+}
+
+const poids = () => {
+    console.log('poids');
+}
+
+const natation = () => {
+    console.log('natations');
+}
+
+
+const main = () => {
+    menu();
+    choices();
+}
+
+
+main();
