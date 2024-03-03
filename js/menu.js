@@ -50,6 +50,12 @@ setInterval(() => {
 
 document.getElementById('startGame').addEventListener('click', function() {
     document.getElementById('mainMenu').style.display = 'none';
+    document.getElementById('gameSelection').style.display = 'block';
+});
+
+document.getElementById('retourMainMenu').addEventListener('click', function() {
+    document.getElementById('gameSelection').style.display = 'none';
+    document.getElementById('mainMenu').style.display = 'flex';
 });
 lucide.createIcons()
 

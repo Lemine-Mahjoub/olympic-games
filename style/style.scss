@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 body::before {
@@ -69,7 +70,7 @@ canvas {
         font-weight: bold;
         letter-spacing: 2px;
         border: 1px solid #fca80c;
-
+        
         &:hover {
             background: radial-gradient(circle, #ff8c00, #ffbe5d);
             transform: scale(1.05);
@@ -99,7 +100,7 @@ canvas {
         margin: 0 10px;
         border-radius: 50%;
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        border: 1px solid #f1f1f1f8;
+        border: 1px solid #fff;
         transition: transform 0.2s ease, background-color 0.3s ease;
         text-decoration: none;
         color: #000;
@@ -130,3 +131,101 @@ canvas {
         }
     }
 }
+
+#gameSelection {
+    z-index: 1001;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f1f1f1e0;
+    width: auto; 
+    max-width: 1200px;
+    height: auto;
+    max-height: 80%;
+    border-radius: 20px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    border: 1px solid #fff;
+
+    #headerGameSelection {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 32px;
+        margin-top: 8px;
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #111;
+            margin-left: -28px;
+        }
+    
+        button {
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            transition: transform 0.3s ease;
+    
+            &:hover {
+            transform: scale(1.05);
+            }
+        }
+    
+        i {
+            font-size: 24px;
+            transition: transform 0.3s ease-in-out;
+        }
+    }
+
+    #gameSelectionButton {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        justify-content: center;
+        gap: 32px;
+        width: 100%;
+        overflow: visible;
+        padding: 32px;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.25s ease-in-out;
+            background-color: #f9f9f9;
+            padding: 10px;
+            padding-top: 20px;
+            border-radius: 10px;
+            border: 1px solid #fff;
+
+            &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            }
+    
+            img {
+            width: 190px;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            }
+    
+            h1 {
+            font-size: 1em;
+            font-weight: bold;
+            color: #444;
+            text-align: center;
+            }
+        }
+    }
+}
+
+
