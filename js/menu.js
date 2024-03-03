@@ -50,7 +50,6 @@ setInterval(() => {
 
 document.getElementById('startGame').addEventListener('click', function() {
     document.getElementById('mainMenu').style.display = 'none';
-    // Start game logic or scene transition here
 });
 lucide.createIcons()
 
