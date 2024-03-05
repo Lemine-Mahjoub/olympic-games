@@ -2,7 +2,7 @@
 /**
  * @module menu
  * @description Gere les menus principal et de selection de jeu ainsi que les faits interessants
- * @return {Int} Choix du Jeu 
+ * @return {Int} Choix du Jeu
  */
 export const menu = function () {
     lucide.createIcons();
@@ -57,30 +57,36 @@ export const menu = function () {
     const factGenerator = () => {
         return listOfFact[Math.floor(Math.random() * listOfFact.length)];
     }
-    
+
     fact.innerHTML = factGenerator();
-    
+
     setInterval(() => {
         fact.innerHTML = factGenerator();
     }, 9000);
-    
+
     document.getElementById('startGame').addEventListener('click', function() {
         document.getElementById('mainMenu').style.display = 'none';
         document.getElementById('gameSelection').style.display = 'block';
     });
-    
+
     document.getElementById('retourMainMenu').addEventListener('click', function() {
         document.getElementById('gameSelection').style.display = 'none';
         document.getElementById('mainMenu').style.display = 'flex';
     });
+
+	/**
+	 * @function getGame
+	 * @description Permet de choisir le jeu
+	 * @returns {Int} choix du jeu
+	 */
     async function getGame () {
         document.getElementById('game1').addEventListener('click', await function() {return 1;});
         document.getElementById('game2').addEventListener('click', await function() {return 2;});
         document.getElementById('game3').addEventListener('click', await function() {return 3;});
         document.getElementById('game4').addEventListener('click', await function() {return 4;});
     }
-    const game = getGame();
-    return game;
+
+    return getGame();
 }
 
 
