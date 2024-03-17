@@ -1,5 +1,5 @@
 import { athletisme } from './games/athletisme.js';
-
+import { blockElementById, hideElementById, getElement } from './lib/dom.js';
 
 // Liste des faits interessants sur les Jeux Olympiques
 const listOfFact = [
@@ -46,12 +46,11 @@ const listOfFact = [
 
 
 /**
- * @function factGenerator
- * @description Genere un fait aleatoire
+ * Genere un fait aleatoire
  * @return {String} fait aleatoire
  */
 export function factGenerator() {
-	const fact = document.querySelector('.fact');
+	const fact = getElement('.fact');
 	fact.innerHTML = listOfFact[Math.floor(Math.random() * listOfFact.length)];
 	setInterval(factGenerator, 9000);
 }
@@ -59,15 +58,13 @@ export function factGenerator() {
 
 
 /**
- * @function choseGame
- * @description Selectionne un jeu
+ * Selectionne un jeu
  * @returns {null}
  */
 export function choseGame() {
 	let choice;
-
 	for(let i = 1; i <= 4; i++) {
-		document.getElementById(`game${i}`).addEventListener('click', function() {
+		addClickEventById('game${i}', function() {
 			choice = i;
 			switchGame(choice);
 		});
@@ -76,8 +73,7 @@ export function choseGame() {
 
 
 /**
- * @function switchGame
- * @description Lance le jeu selectionne
+ * Lance le jeu selectionne
  * @param {Number} choice - le choix du jeu
  * @returns {null}
  */
@@ -102,13 +98,12 @@ function switchGame(choice) {
 }
 
 /**
- * @function launchCanvas
- * @description Affiche le canvas
+ * Affiche le canvas
  * @returns {null}
  */
 function launchCanvas() {
-	document.getElementById('gameSelection').style.display = 'none';
-	document.getElementById('renderCanvas').style.display = 'block';
+	hideElementById('gameSelection');
+	blockElementById('renderCanvas');
 }
 
 /**
