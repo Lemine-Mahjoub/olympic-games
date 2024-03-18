@@ -58,15 +58,13 @@ export function factGenerator() {
 
 
 /**
- * Selectionne un jeu
+ * Ajoute un evenement de click sur l'element menu pour lancer le jeu
  * @returns {null}
  */
-export function choseGame() {
-	let choice;
-	for(let i = 1; i <= 4; i++) {
-		addClickEventById('game${i}', function() {
-			choice = i;
-			switchGame(choice);
+export function setupChoseGameMenu() {
+	for(let choice = 1; choice <= 4; choice++) {
+		addClickEventById('game${choice}', function() {
+			launchGames(choice);
 		});
 	}
 }
@@ -75,33 +73,24 @@ export function choseGame() {
 /**
  * Lance le jeu selectionne
  * @param {Number} choice - le choix du jeu
+ * 1 - Athletisme
+ * 2 - Haies
+ * 3 - Lancer de poids
+ * 4 - Natations
  * @returns {null}
  */
-function switchGame(choice) {
-	launchCanvas();
-	switch(choice) {
-		case 1:
-			athletisme();
-			break;
-		case 2:
-			console.log('hurdle');
-			break;
-		case 3:
-			console.log('poids');
-			break;
-		case 4:
-			console.log('natations');
-			break;
-		default:
-			alert('Erreur');
-	}
+function launchGames(choice) {
+	showCanvas();
+	const games = [launchAthletisme, launchHurdle, launchPoids, launchNatations];
+	games[choice - 1]();
 }
 
 /**
  * Affiche le canvas
  * @returns {null}
  */
-function launchCanvas() {
+function showCanvas() {
+	//modif
 	hideElementById('gameSelection');
 	blockElementById('renderCanvas');
 }

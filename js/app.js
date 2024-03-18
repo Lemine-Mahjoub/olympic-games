@@ -1,9 +1,9 @@
 import { menu } from './menu.js';
-import { choseGame } from './utilis.js';
+import { setupChoseGameMenu } from './utilis.js';
 
-const main = () => {
+function main() {
 	menu();
-	choseGame();
+	setupChoseGameMenu();
 }
 
 main();
