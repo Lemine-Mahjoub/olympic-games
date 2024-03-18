@@ -1,5 +1,5 @@
 import { athletisme } from './games/athletisme.js';
-import { blockElementById, hideElementById, getElement } from './lib/dom.js';
+import { blockElementById, getElement, hideElementById, addClickEventById } from './lib/dom.js';
 
 // Liste des faits interessants sur les Jeux Olympiques
 const listOfFact = [
@@ -63,7 +63,7 @@ export function factGenerator() {
  */
 export function setupChoseGameMenu() {
 	for(let choice = 1; choice <= 4; choice++) {
-		addClickEventById('game${choice}', function() {
+		addClickEventById(`game${choice}`, function() {
 			launchGames(choice);
 		});
 	}
@@ -90,7 +90,6 @@ function launchGames(choice) {
  * @returns {null}
  */
 function showCanvas() {
-	//modif
 	hideElementById('gameSelection');
 	blockElementById('renderCanvas');
 }

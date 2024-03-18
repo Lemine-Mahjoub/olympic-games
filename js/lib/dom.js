@@ -5,7 +5,7 @@
  * @param {function} callback - La fonction à exécuter lorsque l'élément est cliqué.
  */
 export function addClickEventById(id, callback) {
-	document.getElementById(id).addEventListener('click', callback);
+	getElementById(id).addEventListener('click', callback);
 }
 
 /**
@@ -15,7 +15,7 @@ export function addClickEventById(id, callback) {
  * @param {string} display - La nouvelle valeur de la propriété d'affichage.
  */
 export function changeDisplayById(id, display) {
-	document.getElementById(id).style.display = display;
+	getElementById(id).style.display = display;
 }
 
 /**
@@ -60,4 +60,12 @@ export function getElementById(id) {
  */
 export function getElement(selector) {
 	return document.querySelector(selector);
+}
+
+/**
+ * Cache un élément.
+ * @param {HTMLElement} element - L'élément à cacher.
+ */
+export function hideElementByQuery(selecteur) {
+	changeDisplayById(getElement(selecteur) , 'none');
 }
